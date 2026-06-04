@@ -1,68 +1,68 @@
-# Contribuindo com o WAR Tech Scanner
+# Contributing to WAR Tech Scanner
 
-Obrigado pelo interesse em contribuir! Este documento descreve como participar do projeto.
+Thank you for your interest in contributing! This document describes how to take part in the project.
 
-Por favor, note que este projeto segue um [Código de Conduta](CODE_OF_CONDUCT.md). Ao participar, você concorda em respeitar seus termos.
+Please note that this project follows a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to respect its terms.
 
-## Como contribuir
+## How to contribute
 
-### Reportando bugs
+### Reporting bugs
 
-Antes de abrir uma issue, verifique se o problema já não foi reportado na [lista de issues](https://github.com/darioajr/war-tech-scanner/issues).
+Before opening an issue, check whether the problem has already been reported in the [issue list](https://github.com/darioajr/war-tech-scanner/issues).
 
-Ao reportar um bug, inclua:
+When reporting a bug, include:
 
-- Versão do Java e sistema operacional
-- Comando exato executado
-- Arquivo analisado (tipo: WAR, EAR, JAR) e tecnologias esperadas
-- Saída completa (incluindo erros)
-- Comportamento esperado vs. comportamento observado
+- Java version and operating system
+- Exact command executed
+- Analyzed file (type: WAR, EAR, JAR) and expected technologies
+- Full output (including errors)
+- Expected behavior vs. observed behavior
 
-### Sugerindo melhorias
+### Suggesting improvements
 
-Abra uma [issue](https://github.com/darioajr/war-tech-scanner/issues) descrevendo a melhoria antes de enviar um pull request, para que possamos discutir a proposta antes do desenvolvimento.
+Open an [issue](https://github.com/darioajr/war-tech-scanner/issues) describing the improvement before submitting a pull request, so we can discuss the proposal before development.
 
-Isso evita retrabalho e garante que a contribuição esteja alinhada com a direção do projeto.
+This avoids rework and ensures the contribution is aligned with the direction of the project.
 
-### Enviando Pull Requests
+### Submitting Pull Requests
 
-1. Faça um fork do repositório
-2. Crie um branch a partir de `main`:
+1. Fork the repository
+2. Create a branch from `main`:
    ```bash
-   git checkout -b feat/minha-contribuicao
+   git checkout -b feat/my-contribution
    ```
-3. Implemente as alterações seguindo as convenções do projeto
-4. Adicione ou atualize testes quando aplicável
-5. Garanta que o build e os testes passam:
+3. Implement the changes following the project's conventions
+4. Add or update tests where applicable
+5. Make sure the build and tests pass:
    ```bash
    mvn verify
    ```
-6. Faça commit com mensagem clara e assine com DCO (veja abaixo):
+6. Commit with a clear message and sign off with DCO (see below):
    ```bash
-   git commit -s -m "feat: descrição da mudança"
+   git commit -s -m "feat: description of the change"
    ```
-7. Abra o pull request descrevendo o que foi feito e por quê
+7. Open the pull request describing what was done and why
 
-## Convenções de código
+## Code conventions
 
-- Java 21 — use `var`, records, switch expressions e outras features modernas quando apropriado
-- Sem dependências externas novas sem discussão prévia — o projeto mantém footprint mínimo
-- Testes JUnit 5 para toda lógica de detecção e geração de comandos
-- Mensagens de commit em inglês, no formato `<tipo>: <descrição>` (ex: `fix:`, `feat:`, `docs:`, `refactor:`)
+- Java 21 — use `var`, records, switch expressions, and other modern features when appropriate
+- No new external dependencies without prior discussion — the project keeps a minimal footprint
+- JUnit 5 tests for all detection and command-generation logic
+- Commit messages in English, in the `<type>: <description>` format (e.g. `fix:`, `feat:`, `docs:`, `refactor:`)
 
-## Áreas de contribuição
+## Contribution areas
 
-- **Novas tecnologias detectadas** — adicionar suporte a outros frameworks em `TechnologyCatalog.java`
-- **Mapeamentos MTA** — melhorar `TECH_TO_CANDIDATE_SOURCES` e `TECH_TO_TARGETS` em `MtaCommandBuilder.java`
-- **Suporte a novos tipos de instalação MTA** — ex: Podman Compose, Helm
-- **Testes** — cobertura de WARs/EARs com diferentes combinações de tecnologias
-- **Documentação** — exemplos, tutoriais, casos de uso reais
+- **New detected technologies** — add support for other frameworks in `TechnologyCatalog.java`
+- **MTA mappings** — improve `TECH_TO_CANDIDATE_SOURCES` and `TECH_TO_TARGETS` in `MtaCommandBuilder.java`
+- **Support for new MTA installation types** — e.g. Podman Compose, Helm
+- **Tests** — coverage of WARs/EARs with different technology combinations
+- **Documentation** — examples, tutorials, real-world use cases
 
 ## Legal — Developer Certificate of Origin (DCO)
 
-Este projeto usa o [Developer Certificate of Origin 1.1](https://developercertificate.org/) para gerenciar contribuições de código, o mesmo modelo adotado pelo kernel Linux.
+This project uses the [Developer Certificate of Origin 1.1](https://developercertificate.org/) to manage code contributions, the same model adopted by the Linux kernel.
 
-Ao enviar uma contribuição, você certifica que:
+By submitting a contribution, you certify that:
 
 ```
 Developer Certificate of Origin
@@ -89,21 +89,21 @@ By making a contribution to this project, I certify that:
     or the open source license(s) involved.
 ```
 
-Para assinar, adicione ao final da mensagem de commit:
+To sign off, add to the end of the commit message:
 
 ```
-Signed-off-by: Seu Nome <seu@email.com>
+Signed-off-by: Your Name <you@email.com>
 ```
 
-Usando seu nome real. O Git faz isso automaticamente com:
+Using your real name. Git does this automatically with:
 
 ```bash
 git commit -s
 ```
 
-## Cabeçalho de licença
+## License header
 
-Todo arquivo-fonte Java deve incluir o cabeçalho da Apache License 2.0:
+Every Java source file must include the Apache License 2.0 header:
 
 ```java
 /*
@@ -123,6 +123,6 @@ Todo arquivo-fonte Java deve incluir o cabeçalho da Apache License 2.0:
  */
 ```
 
-## Dúvidas
+## Questions
 
-Abra uma [issue](https://github.com/darioajr/war-tech-scanner/issues) com a tag `question` ou entre em contato pelo e-mail darioajr@gmail.com.
+Open an [issue](https://github.com/darioajr/war-tech-scanner/issues) with the `question` tag or get in touch by email at darioajr@gmail.com.

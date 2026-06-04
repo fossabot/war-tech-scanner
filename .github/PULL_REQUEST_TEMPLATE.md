@@ -1,32 +1,32 @@
-## Descrição
+## Description
 
-<!-- O que este PR faz? Por que é necessário? -->
+<!-- What does this PR do? Why is it needed? -->
 
-## Tipo de mudança
+## Type of change
 
 - [ ] 🐛 Bug fix
-- [ ] ✨ Nova funcionalidade
-- [ ] ♻️ Refactoring (sem mudança de comportamento)
-- [ ] 📝 Documentação
-- [ ] 🧪 Testes
+- [ ] ✨ New feature
+- [ ] ♻️ Refactoring (no behavior change)
+- [ ] 📝 Documentation
+- [ ] 🧪 Tests
 - [ ] 🔧 Build / CI
 
-## Como testar
+## How to test
 
-<!-- Passos para validar as mudanças -->
+<!-- Steps to validate the changes -->
 
 ```bash
-java -jar target/war-tech-scanner-0.1.0-SNAPSHOT.jar <seu-artefato>
+java -jar target/war-tech-scanner-0.1.0-SNAPSHOT.jar <your-artifact>
 ```
 
 ## Checklist
 
-- [ ] Os testes passam (`mvn verify`)
-- [ ] Adicionei/atualizei testes para as mudanças
-- [ ] A documentação foi atualizada (README, CHANGELOG)
-- [ ] O commit está assinado com `Signed-off-by` (`git commit -s`)
-- [ ] O código segue as convenções do projeto
+- [ ] Tests pass (`mvn verify`)
+- [ ] Added/updated tests for the changes
+- [ ] Documentation updated (README, CHANGELOG)
+- [ ] Commit is signed off with `Signed-off-by` (`git commit -s`)
+- [ ] Code follows the project's conventions
 
-## Issues relacionadas
+## Related issues
 
 <!-- Closes #N -->

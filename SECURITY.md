@@ -1,36 +1,36 @@
-# Política de Segurança
+# Security Policy
 
-## Versões suportadas
+## Supported versions
 
-| Versão | Suportada |
+| Version | Supported |
 |--------|-----------|
 | 0.1.x (latest) | ✅ |
 
-## Reportando uma vulnerabilidade
+## Reporting a vulnerability
 
-**Não abra uma issue pública para vulnerabilidades de segurança.**
+**Do not open a public issue for security vulnerabilities.**
 
-Por favor, reporte de forma responsável pelo e-mail:
+Please report responsibly by email:
 
 📧 **darioajr@gmail.com**
 
-Inclua na mensagem:
-- Descrição da vulnerabilidade
-- Passos para reproduzir
-- Impacto potencial
-- Sugestão de correção (opcional)
+Include in your message:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (optional)
 
-Você receberá uma resposta em até **72 horas**. Após confirmação e correção, a vulnerabilidade será divulgada publicamente junto com os créditos ao relator (a menos que prefira anonimato).
+You will receive a response within **72 hours**. After confirmation and a fix, the vulnerability will be publicly disclosed along with credit to the reporter (unless you prefer to remain anonymous).
 
-## Escopo
+## Scope
 
-Este projeto é uma ferramenta CLI de análise estática. As superfícies de ataque relevantes são:
+This project is a static-analysis CLI tool. The relevant attack surfaces are:
 
-- **Leitura de arquivos ZIP/JAR/WAR/EAR maliciosos** — o scanner abre e itera entradas de arquivos compactados
-- **Execução de processos externos** (`mta-cli`) — via `ProcessBuilder` com argumentos controlados pelo usuário
-- **Desserialização JSON** (Jackson) — configuração do MTA via `--mta-config`
+- **Reading malicious ZIP/JAR/WAR/EAR files** — the scanner opens and iterates entries of compressed archives
+- **External process execution** (`mta-cli`) — via `ProcessBuilder` with user-controlled arguments
+- **JSON deserialization** (Jackson) — MTA configuration via `--mta-config`
 
-## Dependências
+## Dependencies
 
-As dependências de terceiros e suas licenças estão listadas em [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
-Atualizações de segurança nas dependências são aplicadas nas releases regulares.
+Third-party dependencies and their licenses are listed in [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+Security updates to dependencies are applied in regular releases.

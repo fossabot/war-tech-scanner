@@ -39,65 +39,65 @@ public final class CompatibilityAdvisor {
         var detected = result.technologies.stream().map(t -> t.name).toList();
 
         if (target.isEap8OrLater()) {
-            hints.add("[EAP %s] Namespace javax.* → jakarta.*: todas as dependências e imports devem ser migrados para jakarta.*"
+            hints.add("[EAP %s] Namespace javax.* → jakarta.*: all dependencies and imports must be migrated to jakarta.*"
                     .formatted(target.eapVersion()));
 
             if (detected.contains("EJB")) {
-                hints.add("[EAP %s] EJB: entity beans (EJB 2.x) foram removidos; use JPA entities. Stateful/Stateless/Singleton EJBs continuam suportados."
+                hints.add("[EAP %s] EJB: entity beans (EJB 2.x) were removed; use JPA entities. Stateful/Stateless/Singleton EJBs remain supported."
                         .formatted(target.eapVersion()));
-                hints.add("[EAP %s] EJB: substituir javax.ejb.* por jakarta.ejb.*"
+                hints.add("[EAP %s] EJB: replace javax.ejb.* with jakarta.ejb.*"
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("JPA")) {
-                hints.add("[EAP %s] JPA: migrar javax.persistence.* → jakarta.persistence.*; Hibernate ORM 6.x quebra compatibilidade com mapeamentos legados."
+                hints.add("[EAP %s] JPA: migrate javax.persistence.* → jakarta.persistence.*; Hibernate ORM 6.x breaks compatibility with legacy mappings."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("Hibernate")) {
-                hints.add("[EAP %s] Hibernate: ORM 6.x removeu APIs depreciadas (Criteria legada, SessionFactory XML mappings); revisar arquivos .hbm.xml."
+                hints.add("[EAP %s] Hibernate: ORM 6.x removed deprecated APIs (legacy Criteria, SessionFactory XML mappings); review .hbm.xml files."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("CDI")) {
-                hints.add("[EAP %s] CDI: substituir javax.inject.*/javax.enterprise.* por jakarta.inject.*/jakarta.enterprise.*; beans.xml agora é opcional (bean-discovery-mode=annotated por padrão)."
+                hints.add("[EAP %s] CDI: replace javax.inject.*/javax.enterprise.* with jakarta.inject.*/jakarta.enterprise.*; beans.xml is now optional (bean-discovery-mode=annotated by default)."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("JSF")) {
-                hints.add("[EAP %s] JSF foi renomeado para Jakarta Faces; substituir javax.faces.* por jakarta.faces.*; Facelets continua padrão."
+                hints.add("[EAP %s] JSF was renamed to Jakarta Faces; replace javax.faces.* with jakarta.faces.*; Facelets remains the default."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("JAX-RS")) {
-                hints.add("[EAP %s] JAX-RS 3.1 (RESTEasy): substituir javax.ws.rs.* por jakarta.ws.rs.*; Response.readEntity() retorna IOException verificada."
+                hints.add("[EAP %s] JAX-RS 3.1 (RESTEasy): replace javax.ws.rs.* with jakarta.ws.rs.*; Response.readEntity() throws a checked IOException."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("JAX-WS/SOAP")) {
-                hints.add("[EAP %s] JAX-WS: substituir javax.jws.*/javax.xml.ws.* por jakarta.jws.*/jakarta.xml.ws.*"
+                hints.add("[EAP %s] JAX-WS: replace javax.jws.*/javax.xml.ws.* with jakarta.jws.*/jakarta.xml.ws.*"
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("Servlet")) {
-                hints.add("[EAP %s] Servlet 6.0: substituir javax.servlet.* por jakarta.servlet.*; HttpServletRequest.isRequestedSessionIdFromUrl() removido."
+                hints.add("[EAP %s] Servlet 6.0: replace javax.servlet.* with jakarta.servlet.*; HttpServletRequest.isRequestedSessionIdFromUrl() removed."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("Spring")) {
-                hints.add("[EAP %s] Spring no EAP 8: se deployado como WAR, certifique-se de usar Spring 6.x (que já usa jakarta.*); conflito potencial com Weld/CDI."
+                hints.add("[EAP %s] Spring on EAP 8: if deployed as a WAR, make sure to use Spring 6.x (which already uses jakarta.*); potential conflict with Weld/CDI."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("Struts")) {
-                hints.add("[EAP %s] Struts 1.x não é compatível com Jakarta EE 10 (usa javax.servlet.*); migrar para Struts 2.5+ ou substituir o framework."
+                hints.add("[EAP %s] Struts 1.x is not compatible with Jakarta EE 10 (uses javax.servlet.*); migrate to Struts 2.5+ or replace the framework."
                         .formatted(target.eapVersion()));
             }
         } else if (target.isEap7()) {
-            hints.add("[EAP %s] Namespace: javax.* ainda é usado; jakarta.* NÃO é suportado nesta versão."
+            hints.add("[EAP %s] Namespace: javax.* is still used; jakarta.* is NOT supported in this version."
                     .formatted(target.eapVersion()));
 
             if (detected.contains("EJB")) {
-                hints.add("[EAP %s] EJB: entity beans (EJB 2.x) foram removidos; verificar uso de javax.ejb.EJBObject/EJBHome."
+                hints.add("[EAP %s] EJB: entity beans (EJB 2.x) were removed; check usage of javax.ejb.EJBObject/EJBHome."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("Hibernate")) {
-                hints.add("[EAP %s] Hibernate: versão 5.x incluída; APIs do Hibernate 4.x podem ter depreciações."
+                hints.add("[EAP %s] Hibernate: version 5.x included; Hibernate 4.x APIs may be deprecated."
                         .formatted(target.eapVersion()));
             }
             if (detected.contains("JSF")) {
-                hints.add("[EAP %s] JSF 2.3 incluído; verificar compatibilidade de componentes de terceiros (PrimeFaces, RichFaces)."
+                hints.add("[EAP %s] JSF 2.3 included; check compatibility of third-party components (PrimeFaces, RichFaces)."
                         .formatted(target.eapVersion()));
             }
         }
@@ -112,40 +112,40 @@ public final class CompatibilityAdvisor {
         var detected = result.technologies.stream().map(t -> t.name).toList();
 
         if (java >= 17) {
-            hints.add("[Java %d] strong encapsulation: uso de reflection em APIs internas (sun.*, com.sun.*) falha sem --add-opens; revisar bytecode ASM/CGLIB."
+            hints.add("[Java %d] strong encapsulation: reflection on internal APIs (sun.*, com.sun.*) fails without --add-opens; review ASM/CGLIB bytecode."
                     .formatted(java));
 
             if (detected.contains("Spring")) {
-                hints.add("[Java %d] Spring: versão mínima recomendada é 5.3.x (Java 17) ou 6.x (Java 17+); Spring 4.x não é compatível."
+                hints.add("[Java %d] Spring: minimum recommended version is 5.3.x (Java 17) or 6.x (Java 17+); Spring 4.x is not compatible."
                         .formatted(java));
             }
             if (detected.contains("Hibernate")) {
-                hints.add("[Java %d] Hibernate: versão 5.6+ para Java 17; Hibernate 6.x para Java 17/21."
+                hints.add("[Java %d] Hibernate: version 5.6+ for Java 17; Hibernate 6.x for Java 17/21."
                         .formatted(java));
             }
         }
 
         if (java >= 21) {
-            hints.add("[Java %d] Virtual threads disponíveis; considerar substituir pools de threads fixos por Executors.newVirtualThreadPerTaskExecutor()."
+            hints.add("[Java %d] Virtual threads available; consider replacing fixed thread pools with Executors.newVirtualThreadPerTaskExecutor()."
                     .formatted(java));
-            hints.add("[Java %d] Sequenced Collections: List/Set/Map agora implementam SequencedCollection/SequencedSet/SequencedMap."
+            hints.add("[Java %d] Sequenced Collections: List/Set/Map now implement SequencedCollection/SequencedSet/SequencedMap."
                     .formatted(java));
 
             if (detected.contains("Spring")) {
-                hints.add("[Java %d] Spring: versão 6.1+ recomendada para suporte a virtual threads e Project Loom."
+                hints.add("[Java %d] Spring: version 6.1+ recommended for virtual threads and Project Loom support."
                         .formatted(java));
             }
             if (detected.contains("Hibernate")) {
-                hints.add("[Java %d] Hibernate 6.4+ suporta virtual threads e Records como embeddables."
+                hints.add("[Java %d] Hibernate 6.4+ supports virtual threads and Records as embeddables."
                         .formatted(java));
             }
         }
 
         if (java >= 11 && java < 17) {
-            hints.add("[Java %d] Módulos do Java 9+ podem exigir --add-modules ou --add-opens para APIs removidas (JAXB, JAX-WS, Corba)."
+            hints.add("[Java %d] Java 9+ modules may require --add-modules or --add-opens for removed APIs (JAXB, JAX-WS, Corba)."
                     .formatted(java));
             if (detected.contains("JAX-WS/SOAP")) {
-                hints.add("[Java %d] JAX-WS foi removido do JDK; adicionar dependência explícita (jakarta.xml.ws-api ou com.sun.xml.ws:jaxws-ri)."
+                hints.add("[Java %d] JAX-WS was removed from the JDK; add an explicit dependency (jakarta.xml.ws-api or com.sun.xml.ws:jaxws-ri)."
                         .formatted(java));
             }
         }

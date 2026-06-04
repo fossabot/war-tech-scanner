@@ -94,7 +94,7 @@ public final class MtaCommandBuilder {
         };
 
         if (caps.failureReason() != null) {
-            s.note = caps.failureReason() + " — comando gerado com mapeamentos estáticos (não validado)";
+            s.note = caps.failureReason() + " — command generated from static mappings (not validated)";
         }
 
         return s;
@@ -122,7 +122,7 @@ public final class MtaCommandBuilder {
 
         // registry.redhat.io requires authentication
         if (inst.image != null && inst.image.startsWith("registry.redhat.io")) {
-            sb.append("# Login obrigatório: registry.redhat.io requer conta Red Hat (https://access.redhat.com)\n");
+            sb.append("# Login required: registry.redhat.io requires a Red Hat account (https://access.redhat.com)\n");
             sb.append(engine).append(" login registry.redhat.io\n");
         }
 
@@ -154,9 +154,9 @@ public final class MtaCommandBuilder {
         // Step 1 — install operator via OLM from redhat-operators catalog
         // Step 2 — create the Analysis CR using the MTA Hub API or operator CR
         return """
-                # ── 1. Instalar o Operador MTA (Red Hat) via OLM ──────────────────────
-                # Requer login: oc login --token=<token> --server=<api-url>
-                # registry.redhat.io: docker login registry.redhat.io (conta Red Hat)
+                # ── 1. Install the MTA Operator (Red Hat) via OLM ─────────────────────
+                # Requires login: oc login --token=<token> --server=<api-url>
+                # registry.redhat.io: docker login registry.redhat.io (Red Hat account)
                 oc apply -f - <<'EOF'
                 apiVersion: v1
                 kind: Namespace
@@ -184,8 +184,8 @@ public final class MtaCommandBuilder {
                   sourceNamespace: openshift-marketplace
                 EOF
                 \s
-                # ── 2. Criar a análise via MTA Hub API ────────────────────────────────
-                # Aguardar o operador estar Running antes deste passo
+                # ── 2. Create the analysis via MTA Hub API ────────────────────────────
+                # Wait for the operator to be Running before this step
                 MTA_HUB=%s
                 curl -s -X POST "$MTA_HUB/hub/applications" \\
                   -H "Content-Type: application/json" \\

@@ -70,7 +70,7 @@ class CompatibilityAdvisorTest {
     @Test
     void eap7_addsNamespaceWarning() {
         var hints = CompatibilityAdvisor.advise(resultWith(), new MigrationTarget("7.4", 0));
-        assertTrue(hints.stream().anyMatch(h -> h.contains("javax.* ainda é usado")));
+        assertTrue(hints.stream().anyMatch(h -> h.contains("javax.* is still used")));
     }
 
     @Test

@@ -1,59 +1,59 @@
 name: "🐛 Bug Report"
-description: Reporte um comportamento incorreto ou inesperado
+description: Report incorrect or unexpected behavior
 labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Obrigado por reportar! Preencha os campos abaixo para agilizar a correção.
+        Thanks for reporting! Fill in the fields below to speed up the fix.
 
   - type: input
     id: version
     attributes:
-      label: Versão do war-tech-scanner
-      placeholder: "ex: 0.1.0"
+      label: war-tech-scanner version
+      placeholder: "e.g. 0.1.0"
     validations:
       required: true
 
   - type: input
     id: java
     attributes:
-      label: Versão do Java
-      placeholder: "ex: OpenJDK 21.0.3"
+      label: Java version
+      placeholder: "e.g. OpenJDK 21.0.3"
     validations:
       required: true
 
   - type: input
     id: os
     attributes:
-      label: Sistema operacional
-      placeholder: "ex: macOS 14.5 / Ubuntu 24.04"
+      label: Operating system
+      placeholder: "e.g. macOS 14.5 / Ubuntu 24.04"
     validations:
       required: true
 
   - type: input
     id: artifact_type
     attributes:
-      label: Tipo do artefato analisado
-      placeholder: "ex: EAR, WAR, JAR"
+      label: Analyzed artifact type
+      placeholder: "e.g. EAR, WAR, JAR"
     validations:
       required: true
 
   - type: textarea
     id: command
     attributes:
-      label: Comando executado
+      label: Command executed
       render: bash
       placeholder: |
-        java -jar war-tech-scanner-0.1.0.jar minha-app.ear --target-eap=8.1 --json
+        java -jar war-tech-scanner-0.1.0.jar my-app.ear --target-eap=8.1 --json
     validations:
       required: true
 
   - type: textarea
     id: actual
     attributes:
-      label: Comportamento observado
-      description: Cole a saída completa (incluindo erros)
+      label: Observed behavior
+      description: Paste the full output (including errors)
       render: text
     validations:
       required: true
@@ -61,12 +61,12 @@ body:
   - type: textarea
     id: expected
     attributes:
-      label: Comportamento esperado
+      label: Expected behavior
     validations:
       required: true
 
   - type: textarea
     id: context
     attributes:
-      label: Contexto adicional
-      description: Qualquer informação extra que possa ajudar (stack trace, logs, etc.)
+      label: Additional context
+      description: Any extra information that could help (stack trace, logs, etc.)

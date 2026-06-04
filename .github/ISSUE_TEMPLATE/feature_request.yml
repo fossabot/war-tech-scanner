@@ -1,46 +1,46 @@
 name: "✨ Feature Request"
-description: Sugira uma melhoria ou nova funcionalidade
+description: Suggest an improvement or new feature
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Obrigado pela sugestão! Descreva o que você gostaria de ver no projeto.
+        Thanks for the suggestion! Describe what you would like to see in the project.
 
   - type: textarea
     id: problem
     attributes:
-      label: Problema ou necessidade
-      description: Qual problema esta feature resolveria?
-      placeholder: "Quando analiso um EAR com X, não consigo Y..."
+      label: Problem or need
+      description: What problem would this feature solve?
+      placeholder: "When I analyze an EAR with X, I can't Y..."
     validations:
       required: true
 
   - type: textarea
     id: solution
     attributes:
-      label: Solução proposta
-      description: Como você imagina que deveria funcionar?
+      label: Proposed solution
+      description: How do you imagine it should work?
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternativas consideradas
-      description: Existe alguma forma de fazer isso hoje? Por que não é suficiente?
+      label: Alternatives considered
+      description: Is there a way to do this today? Why isn't it enough?
 
   - type: dropdown
     id: area
     attributes:
-      label: Área
+      label: Area
       options:
-        - Detecção de tecnologias
-        - Dicas de migração (CompatibilityAdvisor)
-        - Sugestão de comando MTA
-        - Saída / relatório
+        - Technology detection
+        - Migration hints (CompatibilityAdvisor)
+        - MTA command suggestion
+        - Output / report
         - Performance
-        - Documentação
-        - Outro
+        - Documentation
+        - Other
     validations:
       required: true

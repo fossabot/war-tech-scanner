@@ -48,7 +48,7 @@ public final class ArchiveScanner {
 
     public ScanResult scan(Path artifact) throws IOException {
         if (!Files.isRegularFile(artifact)) {
-            throw new IOException("Arquivo não encontrado: " + artifact);
+            throw new IOException("File not found: " + artifact);
         }
         var result = new ScanResult();
         result.artifact = artifact.toAbsolutePath().toString();
@@ -90,7 +90,7 @@ public final class ArchiveScanner {
                         try {
                             scanNestedArchive(bytes, name + "!", result, techs);
                         } catch (Exception e) {
-                            result.warnings.add("Erro ao processar arquivo aninhado " + name + ": " + e.getMessage());
+                            result.warnings.add("Error processing nested archive " + name + ": " + e.getMessage());
                         }
                     }));
                 }
@@ -98,7 +98,7 @@ public final class ArchiveScanner {
 
             for (var f : futures) {
                 try { f.get(); } catch (Exception e) {
-                    result.warnings.add("Erro em tarefa de scan: " + e.getMessage());
+                    result.warnings.add("Error in scan task: " + e.getMessage());
                 }
             }
         }
@@ -119,7 +119,7 @@ public final class ArchiveScanner {
                 }
             }
         } catch (Exception e) {
-            result.warnings.add("Não foi possível ler arquivo aninhado " + prefix + ": " + e.getMessage());
+            result.warnings.add("Could not read nested archive " + prefix + ": " + e.getMessage());
         }
     }
 
@@ -151,7 +151,7 @@ public final class ArchiveScanner {
                 }
             }
         } catch (Exception e) {
-            result.warnings.add("Não foi possível analisar class " + entryName + ": " + e.getMessage());
+            result.warnings.add("Could not analyze class " + entryName + ": " + e.getMessage());
         }
     }
 

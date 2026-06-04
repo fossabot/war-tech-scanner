@@ -111,8 +111,8 @@ public final class RichConsole implements ScanProgressListener {
         }
 
         printBanner();
-        System.out.println(ansi().fgBrightBlack().a("  Arquivo : ").reset().fgCyan().a(artifact).reset());
-        System.out.println(ansi().fgBrightBlack().a("  Entradas: ").reset().a(totalEntries));
+        System.out.println(ansi().fgBrightBlack().a("  File    : ").reset().fgCyan().a(artifact).reset());
+        System.out.println(ansi().fgBrightBlack().a("  Entries : ").reset().a(totalEntries));
         System.out.println();
         spinnerThread = Thread.ofVirtual().start(this::renderLoop);
     }
@@ -149,18 +149,18 @@ public final class RichConsole implements ScanProgressListener {
         int boxWidth = Math.min(termWidth - 2, 90);
 
         printBoxTop(boxWidth);
-        printBoxTitle("WAR TECH SCANNER  -  RESULTADO", boxWidth, Color.CYAN);
+        printBoxTitle("WAR TECH SCANNER  -  RESULT", boxWidth, Color.CYAN);
         printBoxSep(boxWidth);
-        printBoxLine("  Arquivo  :  " + result.artifact, boxWidth);
-        printBoxLine("  Tipo     :  " + result.artifactType, boxWidth);
+        printBoxLine("  File     :  " + result.artifact, boxWidth);
+        printBoxLine("  Type     :  " + result.artifactType, boxWidth);
         printBoxLine("  Scan     :  " + result.scannedAt, boxWidth);
         printBoxLine("  Classes  :  " + result.classesWithEvidence.size()
-                + "   Descritores: " + result.descriptors.size()
+                + "   Descriptors: " + result.descriptors.size()
                 + "   Libs: " + result.libraries.size(), boxWidth);
 
         if (result.technologies.isEmpty()) {
             printBoxSep(boxWidth);
-            printBoxLine(ansi().fgYellow().a("  Nenhuma tecnologia conhecida detectada.").reset().toString(), boxWidth);
+            printBoxLine(ansi().fgYellow().a("  No known technology detected.").reset().toString(), boxWidth);
             printBoxBottom(boxWidth);
             cleanup();
             return;
@@ -168,7 +168,7 @@ public final class RichConsole implements ScanProgressListener {
 
         // ── bar chart ────────────────────────────────────────────────────────
         printBoxSep(boxWidth);
-        printBoxTitle("TECNOLOGIAS DETECTADAS", boxWidth, Color.WHITE);
+        printBoxTitle("DETECTED TECHNOLOGIES", boxWidth, Color.WHITE);
         printBoxSep(boxWidth);
 
         int maxScore   = result.technologies.stream().mapToInt(t -> t.score).max().orElse(1);
@@ -190,7 +190,7 @@ public final class RichConsole implements ScanProgressListener {
                 if (shown++ >= maxEvidence) {
                     int remaining = tech.evidences.size() - maxEvidence;
                     printBoxLine(ansi().fgBrightBlack()
-                            .a("    " + ch.more() + " +" + remaining + " mais").reset().toString(), boxWidth);
+                            .a("    " + ch.more() + " +" + remaining + " more").reset().toString(), boxWidth);
                     break;
                 }
                 printBoxLine(ansi().fgBrightBlack()
@@ -201,7 +201,7 @@ public final class RichConsole implements ScanProgressListener {
         // ── warnings ─────────────────────────────────────────────────────────
         if (!result.warnings.isEmpty()) {
             printBoxSep(boxWidth);
-            printBoxTitle("AVISOS", boxWidth, Color.YELLOW);
+            printBoxTitle("WARNINGS", boxWidth, Color.YELLOW);
             printBoxSep(boxWidth);
             for (var w : result.warnings) {
                 printBoxLine(ansi().fgYellow().a("  " + ch.warn() + "  ").reset()
@@ -211,7 +211,7 @@ public final class RichConsole implements ScanProgressListener {
 
         // ── migration hints ──────────────────────────────────────────────────
         if (!result.migrationHints.isEmpty()) {
-            String title = "MIGRACAO";
+            String title = "MIGRATION";
             if (target.hasEapVersion()) title += " -> EAP " + target.eapVersion();
             if (target.hasJavaVersion()) title += " / Java " + target.javaVersion();
             printBoxSep(boxWidth);

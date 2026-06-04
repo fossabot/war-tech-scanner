@@ -54,7 +54,7 @@ public final class MtaDiscovery {
         var targets   = runList(inst.path, "--list-targets");
         var providers = runList(inst.path, "--list-providers");
         if (sources.isEmpty() && targets.isEmpty())
-            return emptyCapabilities("Binary found but discovery failed — verifique se ~/.kantra está configurado: "
+            return emptyCapabilities("Binary found but discovery failed — check that ~/.kantra is configured: "
                     + "cp -r <mta-dir>/{rulesets,jdtls,fernflower.jar,maven.default.index,static-report} ~/.kantra/");
         return new Capabilities(sources, targets, providers, null);
     }

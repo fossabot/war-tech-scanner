@@ -37,15 +37,6 @@ jobs:
           key: sonar-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: sonar-${{ runner.os }}-
 
-      - name: Import GPG key
-        run: |
-          mkdir -p ~/.gnupg
-          chmod 700 ~/.gnupg
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
-          KEY_ID=$(gpg --list-keys --with-colons | grep '^pub' | cut -d':' -f5)
-          echo "default-key ${KEY_ID}" >> ~/.gnupg/gpg.conf
-          echo "use-agent" >> ~/.gnupg/gpg.conf
-
       - name: Make Maven wrapper executable
         run: chmod +x ./mvnw
 
@@ -125,6 +116,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAVEN_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

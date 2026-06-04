@@ -33,31 +33,31 @@ import java.util.concurrent.Callable;
         name = "war-tech-scanner",
         mixinStandardHelpOptions = true,
         version = "war-tech-scanner 0.1.0",
-        description = "Detecta EJB, JPA, Hibernate e tecnologias Java EE/Jakarta EE em WAR/EAR/JAR."
+        description = "Detects EJB, JPA, Hibernate and Java EE/Jakarta EE technologies in WAR/EAR/JAR."
 )
 public class Main implements Callable<Integer> {
 
-    @Parameters(index = "0", description = "Arquivo .war, .ear, .jar ou .rar a analisar")
+    @Parameters(index = "0", description = ".war, .ear, .jar or .rar file to analyze")
     Path artifact;
 
-    @Option(names = {"--json"}, description = "Imprime o resultado em JSON (desativa UI rica)")
+    @Option(names = {"--json"}, description = "Prints the result as JSON (disables rich UI)")
     boolean json;
 
-    @Option(names = {"--no-nested"}, description = "Não analisa JAR/WAR/EAR/RAR aninhados")
+    @Option(names = {"--no-nested"}, description = "Does not analyze nested JAR/WAR/EAR/RAR")
     boolean noNested;
 
-    @Option(names = {"--max-evidence"}, description = "Máximo de evidências por tecnologia. Default: ${DEFAULT-VALUE}")
+    @Option(names = {"--max-evidence"}, description = "Max evidences per technology. Default: ${DEFAULT-VALUE}")
     int maxEvidence = 5;
 
-    @Option(names = {"--target-eap"}, description = "Versão alvo do JBoss EAP (ex: 7.4, 8.0)")
+    @Option(names = {"--target-eap"}, description = "Target JBoss EAP version (e.g. 7.4, 8.0)")
     String targetEap;
 
-    @Option(names = {"--target-java"}, description = "Versão alvo do Java (ex: 11, 17, 21)")
+    @Option(names = {"--target-java"}, description = "Target Java version (e.g. 11, 17, 21)")
     int targetJava = 0;
 
     @Option(names = {"--mta-config"},
-            description = "Caminho para o arquivo de configuração do MTA (war-tech-scanner-config.json). "
-                        + "Quando informado, gera sugestões de comando mta-cli para cada instalação configurada.")
+            description = "Path to the MTA configuration file (war-tech-scanner-config.json). "
+                        + "When provided, generates mta-cli command suggestions for each configured installation.")
     Path mtaConfig;
 
     public static void main(String[] args) {

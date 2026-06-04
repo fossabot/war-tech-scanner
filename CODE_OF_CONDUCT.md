@@ -1,45 +1,45 @@
-# Código de Conduta
+# Code of Conduct
 
-## Nosso Compromisso
+## Our Pledge
 
-Com o objetivo de fomentar um ambiente aberto e acolhedor, nós, como contribuidores e mantenedores, nos comprometemos a tornar a participação neste projeto uma experiência livre de assédio para todos, independentemente de idade, biotipo, deficiência, etnia, identidade e expressão de gênero, nível de experiência, educação, status socioeconômico, nacionalidade, aparência pessoal, raça, religião ou identidade e orientação sexual.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in this project a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-## Nossos Padrões
+## Our Standards
 
-Exemplos de comportamentos que contribuem para a criação de um ambiente positivo:
+Examples of behavior that contributes to creating a positive environment:
 
-- Usar linguagem acolhedora e inclusiva
-- Respeitar pontos de vista e experiências diferentes
-- Aceitar críticas construtivas com elegância
-- Focar no que é melhor para a comunidade
-- Demonstrar empatia para com outros membros da comunidade
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
 
-Exemplos de comportamentos inaceitáveis:
+Examples of unacceptable behavior:
 
-- Uso de linguagem ou imagens sexualizadas e atenção ou avanços sexuais indesejados
-- Comentários insultuosos/depreciativos, ataques pessoais ou políticos (*trolling*)
-- Assédio público ou privado
-- Publicar informações privadas de terceiros, como endereço físico ou eletrônico, sem permissão explícita
-- Qualquer conduta que possa ser razoavelmente considerada inadequada em ambiente profissional
+- The use of sexualized language or imagery and unwelcome sexual attention or advances
+- Insulting/derogatory comments, personal or political attacks (*trolling*)
+- Public or private harassment
+- Publishing others' private information, such as a physical or electronic address, without explicit permission
+- Any conduct that could reasonably be considered inappropriate in a professional setting
 
-## Nossas Responsabilidades
+## Our Responsibilities
 
-Os mantenedores do projeto são responsáveis por esclarecer os padrões de comportamento aceitável e devem tomar ações corretivas justas em resposta a quaisquer instâncias de comportamento inaceitável.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take fair corrective action in response to any instances of unacceptable behavior.
 
-Os mantenedores têm o direito e a responsabilidade de remover, editar ou rejeitar comentários, commits, código, edições de wiki, issues e outras contribuições que não estejam alinhadas com este Código de Conduta, ou banir temporária ou permanentemente qualquer contribuidor por comportamentos considerados inadequados, ameaçadores, ofensivos ou prejudiciais.
+Maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct, or to temporarily or permanently ban any contributor for behaviors deemed inappropriate, threatening, offensive, or harmful.
 
-## Escopo
+## Scope
 
-Este Código de Conduta se aplica tanto nos espaços do projeto quanto em espaços públicos quando um indivíduo representa o projeto ou sua comunidade. Exemplos de representação incluem o uso de um endereço de e-mail oficial do projeto, publicações via conta oficial em redes sociais ou atuação como representante designado em evento online ou presencial.
+This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representation include using an official project email address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
 
-## Aplicação
+## Enforcement
 
-Instâncias de comportamento abusivo, assediador ou de outra forma inaceitável podem ser reportadas ao mantenedor do projeto:
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project maintainer:
 
 - **Dario Alves Junior** — darioajr@gmail.com
 
-Todas as reclamações serão revisadas e investigadas e resultarão em uma resposta considerada necessária e adequada às circunstâncias. A equipe do projeto é obrigada a manter confidencialidade em relação ao relator de um incidente.
+All complaints will be reviewed and investigated and will result in a response deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident.
 
-## Atribuição
+## Attribution
 
-Este Código de Conduta é adaptado do [Contributor Covenant](https://www.contributor-covenant.org), versão 2.1, disponível em https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
